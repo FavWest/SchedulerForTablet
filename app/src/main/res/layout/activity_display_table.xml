@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".DisplayTable">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/title"
+        android:scrollbars="vertical">
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/title_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="NAME"
+                    android:textAlignment="center"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:id="@+id/title_Monday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="MON"
+                    android:textAlignment="center"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:id="@+id/title_Tuesday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="TUE"
+                    android:textAlignment="center"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:id="@+id/title_Wednesday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="WED"
+                    android:textAlignment="center"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:id="@+id/title_Thursday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="THU"
+                    android:textAlignment="center"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:id="@+id/title_Friday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="FRI"
+                    android:textAlignment="center"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:id="@+id/title_Total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="TOTAL"
+                    android:textAlignment="center"
+                    android:textSize="28sp" />
+
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/display_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="  "
+                    android:textAlignment="center"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:id="@+id/display_mon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textAlignment="center"
+                    android:textSize="28sp"
+                    android:onClick="changeDay"/>
+
+                <TextView
+                    android:id="@+id/display_tues"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textAlignment="center"
+                    android:textSize="28sp"
+                    android:onClick="changeDay"/>
+
+                <TextView
+                    android:id="@+id/display_wed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textAlignment="center"
+                    android:textSize="28sp"
+                    android:onClick="changeDay"/>
+
+                <TextView
+                    android:id="@+id/display_thurs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textAlignment="center"
+                    android:textSize="28sp"
+                    android:onClick="changeDay"/>
+
+                <TextView
+                    android:id="@+id/display_fri"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textAlignment="center"
+                    android:textSize="28sp"
+                    android:onClick="changeDay"/>
+
+                <TextView
+                    android:id="@+id/display_total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textAlignment="center"
+                    android:textSize="28sp"/>
+
+            </TableRow>
+        </TableLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">Scheduler</string>
+    <string-array name="day_array">
+        <item>Okay</item>
+        <item>Need</item>
+        <item>Don\'t Want</item>
+    </string-array>
+    <string-array name="days_wanted_array">
+        <item>2 days</item>
+        <item>3 days</item>
+        <item>4 days</item>
+        <item>5 days</item>
+    </string-array>
+    <string-array name="minimum_days_array">
+        <item>same</item>
+        <item>2 days</item>
+        <item>3 days</item>
+        <item>4 days</item>
+    </string-array>
+
+    <string name="long_text">Are you sure this blue is the same as the
+blue over there? This wall’s like the
+bottom of a pool, its
+color I mean. I need a
+darker two-piece this summer, the kind with
+elastic at the waist so it actually
+fits. I can’t
+find her hands. Where does this gold
+go? It’s like the angel’s giving
+her a little piece of honeycomb to eat.
+I don’t see why God doesn’t
+just come down and
+kiss her himself. This is the red of that
+lipstick we saw at the
+mall. This piece of her
+neck could fit into the light part
+of the sky. I think this is a
+piece of water. What kind of
+queen? You mean
+right here? And are we supposed to believe
+she can suddenly
+talk angel? Who thought this stuff
+up? I wish I had a
+velvet bikini. That flower’s the color of the
+veins in my grandmother’s hands. I
+wish we could
+walk into that garden and pick an
+X-ray to float on.
+Yeah. I do too. I’d say a
+zillion yeses to anyone for that.</string>
+</resources>
