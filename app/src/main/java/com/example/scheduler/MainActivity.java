@@ -144,6 +144,9 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     public void saveInputData(View view) {
+        //saves the user-entered data and takes the user to the display_table activity
+
+        //sets the variables to be saved
         String name=enterName.getText().toString();
         String monChoice=mon_spinner.getSelectedItem().toString();
         String tuesChoice=tues_spinner.getSelectedItem().toString();
@@ -152,9 +155,13 @@ public class MainActivity extends AppCompatActivity implements
         String friChoice=fri_spinner.getSelectedItem().toString();
         String wantDays=days_wanted_spinner.getSelectedItem().toString();
         String minDays=minimum_days_spinner.getSelectedItem().toString();
+
+        //TODO Makes a toast- temporary
         String message=name + " " + monChoice+ " " + tuesChoice + " "
                 + wedChoice + " " + thursChoice +" " + friChoice;
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+
+        //Sends the user entered info to the new activity as intent extras
         Intent intent= new Intent(this, DisplayTable.class);
         intent.putExtra(ENTER_NAME, name);
         intent.putExtra(MON, monChoice);
@@ -164,6 +171,8 @@ public class MainActivity extends AppCompatActivity implements
         intent.putExtra(FRI, friChoice);
         intent.putExtra(WANT, wantDays);
         intent.putExtra(MIN, minDays);
+
+        //Starts the display_table activity
         startActivity(intent);
     }
 

@@ -1,17 +1,14 @@
 package com.example.scheduler;
 
-import androidx.annotation.ColorInt;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 import static com.example.scheduler.MainActivity.FRI;
-import static com.example.scheduler.MainActivity.MIN;
 import static com.example.scheduler.MainActivity.MON;
 import static com.example.scheduler.MainActivity.THURS;
 import static com.example.scheduler.MainActivity.TUES;
@@ -37,6 +34,9 @@ public class DisplayTable extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_table);
+
+        //Get the intent from the Main Activity.
+        //This includes extras containing the user-entered data for the new row
         Intent intent = getIntent();
 
         //Get and display the name
@@ -44,7 +44,7 @@ public class DisplayTable extends AppCompatActivity {
         display_name = findViewById(R.id.display_name);
         display_name.setText(name);
 
-        //Get TextViews for weekdays and total
+        //Get TextViews for weekday choices and total days wanted
         display_mon = findViewById(R.id.display_mon);
         display_tues = findViewById(R.id.display_tues);
         display_wed = findViewById(R.id.display_wed);
@@ -52,8 +52,9 @@ public class DisplayTable extends AppCompatActivity {
         display_fri = findViewById(R.id.display_fri);
         display_total = findViewById(R.id.display_total);
 
-        //Get numbers from Days Wanted and Minimum Days
+        //Get the user selection for daysWanted (a String) and convert it to an int type
         daysWanted=convertWantToInt(intent.getStringExtra(WANT));
+        //TODO Minimum Days
         //daysMinimum=convertMinimumToInt(MIN);
 
         //Fill and format the day cells for this row
@@ -63,15 +64,22 @@ public class DisplayTable extends AppCompatActivity {
         makeDayDisplay(intent, display_thurs, THURS);
         makeDayDisplay(intent, display_fri, FRI);
 
-        //Make display_total show the initial total
+        //Make display_total show the total days the child is currently assigned
         makeNewRowTotal();
     }
 
     public void makeDayDisplay(Intent intent, TextView display, String extra) {
+        //for the specified day display TextView, get the intent extra
+        // that holds the user's choice for that day
+
+        //Get the user's choice for the day from the intent extra
         String value = intent.getStringExtra(extra);
-        //Translate that value and display appropriate text
+
+        //Use the processInput method to translate that value and display an "X"
+        //if the user chose "need" for this day
         String displayValue = processInput(value);
         display.setText(displayValue);
+
         //Determine whether the cell should be locked or unlocked,
         //if it should be locked ("Need" or "Don't Want" chosen)
         //make the cell unclickable and set the background to gray
@@ -82,6 +90,8 @@ public class DisplayTable extends AppCompatActivity {
     }
 
     //Takes the user's entered choices and converts them to text to display
+    //display an "X" if the user chose "need" for this day, otherwise display
+    //an empty string
     public String processInput(String input) {
         switch (input) {
             case "Okay":
@@ -94,7 +104,10 @@ public class DisplayTable extends AppCompatActivity {
         return input;
     }
 
-    //When a clickable view is clicked, change that day's registration
+    //When a clickable view is clicked, change that day's registration:
+    //ie, add or remove an "X" to indicate whether that day is selected.
+    //Then recalculate the number of days selected in the row by counting
+    //the "X"s in the row
     public void changeDay(View view) {
         //Change the registration for the clicked-on day
         makeNewDayText(view);
@@ -104,6 +117,7 @@ public class DisplayTable extends AppCompatActivity {
     }
 
     //Change the registration for the clicked-on day
+    //ie, add or remove an "X" to indicate whether that day is selected
     private void makeNewDayText(View view) {
         TextView textView = (TextView) view;
         String currentText = textView.getText().toString();
@@ -114,8 +128,11 @@ public class DisplayTable extends AppCompatActivity {
         }
     }
 
-    //Add up the total registered days for that row and display the result
+    //Add up the total registered days for the row by counting
+    //the "X"s in the row and display the result in the "Total" column.
     private void makeNewRowTotal() {
+
+        //Count the "X"s in the row
         TextView[] days = {display_mon, display_tues, display_wed, display_thurs, display_fri};
         count = 0;
         for (TextView day : days) {
@@ -123,10 +140,16 @@ public class DisplayTable extends AppCompatActivity {
                 count += 1;
             }
         }
+
+        //Reset the display_total TextView to display the count
+        //If the count is equal to daysWanted, set the background to purple
         display_total.setText(Integer.toString(count));
         if(daysWanted==count){
             display_total.setBackgroundColor(getResources().getColor(R.color.purple_200));
         }
+
+        //If the count is NOT equal to daysWanted, set the background to red
+        //and change the display_total message to indicate both count and days wanted
         else{
             display_total.setBackgroundColor(getResources().getColor(R.color.red_alert));
             String message=String.format("%s (wanted: %d)", Integer.toString(count), daysWanted);
@@ -135,6 +158,7 @@ public class DisplayTable extends AppCompatActivity {
     }
 
     private int convertWantToInt(String string){
+        //takes the number selected by the user and converts it from a String type to an int
         return Integer.parseInt(String.valueOf(string.charAt(0)));
     }
 }
