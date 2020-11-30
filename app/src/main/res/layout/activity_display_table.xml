@@ -12,12 +12,14 @@
         android:layout_height="wrap_content" />
 
     <ScrollView
+        android:id="@+id/display_table_scrollview"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_below="@id/title"
         android:scrollbars="vertical">
 
         <TableLayout
+            android:id="@+id/table_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
