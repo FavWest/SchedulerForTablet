@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OldMainActivity">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/enterName_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NAME  "
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/mon_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MON"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tues_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TUES"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/wed_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WED"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/thurs_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="THURS"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/fri_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FRI"
+            android:textSize="24sp" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/enterName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Name"
+            android:ems="5"
+            android:inputType="textPersonName"
+            android:textSize="24sp" />
+
+        <Spinner
+            android:id="@+id/mon_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Spinner
+            android:id="@+id/tues_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Spinner
+            android:id="@+id/wed_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Spinner
+            android:id="@+id/thurs_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Spinner
+            android:id="@+id/fri_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/days_wanted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DAYS WANTED"
+            android:textSize="24sp" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/minimum_days"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MINIMUM DAYS"
+            android:textSize="24sp" />
+
+    </TableRow>
+</TableLayout>

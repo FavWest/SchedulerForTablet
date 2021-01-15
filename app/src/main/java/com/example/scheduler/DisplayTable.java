@@ -1,6 +1,5 @@
 package com.example.scheduler;
 
-import androidx.annotation.ColorInt;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -8,15 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
-import static com.example.scheduler.MainActivity.FRI;
-import static com.example.scheduler.MainActivity.MIN;
-import static com.example.scheduler.MainActivity.MON;
-import static com.example.scheduler.MainActivity.THURS;
-import static com.example.scheduler.MainActivity.TUES;
-import static com.example.scheduler.MainActivity.WANT;
-import static com.example.scheduler.MainActivity.WED;
+import static com.example.scheduler.OldMainActivity.FRI;
+import static com.example.scheduler.OldMainActivity.MON;
+import static com.example.scheduler.OldMainActivity.THURS;
+import static com.example.scheduler.OldMainActivity.TUES;
+import static com.example.scheduler.OldMainActivity.WANT;
+import static com.example.scheduler.OldMainActivity.WED;
 
 public class DisplayTable extends AppCompatActivity {
 
@@ -40,7 +36,7 @@ public class DisplayTable extends AppCompatActivity {
         Intent intent = getIntent();
 
         //Get and display the name
-        name = intent.getStringExtra(MainActivity.ENTER_NAME);
+        name = intent.getStringExtra(OldMainActivity.ENTER_NAME);
         display_name = findViewById(R.id.display_name);
         display_name.setText(name);
 
