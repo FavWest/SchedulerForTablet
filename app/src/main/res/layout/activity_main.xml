@@ -17,27 +17,27 @@
                 style="@style/weekdays"
                 android:layout_weight="1"/>
             <TextView
-                android:text="MON (0)"
+                android:text="MON"
                 style="@style/weekdays"
                 android:layout_weight="1"
                 />
             <TextView
-                android:text="TUE (0)"
+                android:text="TUE"
                 style="@style/weekdays"
                 android:layout_weight="1"
                 />
             <TextView
-                android:text="WED (0)"
+                android:text="WED"
                 style="@style/weekdays"
                 android:layout_weight="1"
                 />
             <TextView
-                android:text="THU(0)"
+                android:text="THU"
                 style="@style/weekdays"
                 android:layout_weight="1"
                 />
             <TextView
-                android:text="FRI (0)"
+                android:text="FRI"
                 android:layout_weight="1"
                 style="@style/weekdays"
                 />
